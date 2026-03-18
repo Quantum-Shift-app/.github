@@ -1,0 +1,98 @@
+name: 📚 Documentation Issue
+description: Report missing or unclear documentation
+title: "[DOCS] "
+labels: ["documentation", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Help us improve our documentation! 📖
+        Let us know what's unclear, missing, or confusing.
+
+  - type: dropdown
+    id: doc_type
+    attributes:
+      label: "📑 Documentation Type"
+      options:
+        - "README"
+        - "API Documentation"
+        - "Setup/Installation Guide"
+        - "Architecture Documentation"
+        - "Code Comments/Docstrings"
+        - "Tutorial/Guide"
+        - "Troubleshooting Guide"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: location
+    attributes:
+      label: "📍 Location"
+      description: "Where is this documentation? (Link or path)"
+      placeholder: |
+        - File: docs/api/endpoints.md
+        - Link: https://github.com/Quantum-Shift-app/quantumshift_ai/blob/main/README.md
+        - Line: 42-56
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "🤔 What's the problem?"
+      description: "What's unclear, missing, or needs improvement?"
+      placeholder: |
+        The authentication section doesn't explain how to handle token refresh.
+        New users get confused and ask in discussions.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "✅ What should be documented?"
+      description: "What information is needed?"
+      placeholder: |
+        1. **Token Refresh Flow**: Step-by-step guide with examples
+        2. **Error Handling**: How to handle 401/403 errors
+        3. **Code Example**: cURL, Python, JavaScript versions
+        4. **Diagram**: Flow chart of authentication process
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: "👤 Context"
+      description: "Who would benefit from this documentation? What's their experience level?"
+      placeholder: |
+        - **Audience**: Backend developers new to the project
+        - **Experience Level**: 2-3 years Python experience
+        - **Use Case**: Integrating external services with our API
+
+  - type: textarea
+    id: references
+    attributes:
+      label: "🔗 References & Examples"
+      description: "Links to similar documentation or examples"
+      placeholder: |
+        - Good example: https://stripe.com/docs/api/authentication
+        - Related issue: #1234
+        - Customer question: [Support ticket link]
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "🔍 Pre-submission Checklist"
+      options:
+        - label: "I've checked if this is already documented"
+          required: true
+        - label: "I've provided a clear location reference"
+          required: true
+        - label: "I've explained what information is missing"
+          required: true
+        - label: "I've read the CODE_OF_CONDUCT"
+          required: true

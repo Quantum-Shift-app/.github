@@ -1,0 +1,90 @@
+name: 🔒 Security Vulnerability
+description: Report a security vulnerability (CONFIDENTIAL)
+title: "[SECURITY] Confidential Report"
+labels: ["security", "confidential"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⚠️ IMPORTANT - CONFIDENTIAL
+        
+        **DO NOT** create public security issues on GitHub!
+        
+        For security vulnerabilities, please email: **security@quantum-shift.fr**
+        
+        This form is only for initial classification. Detailed reports should be sent privately.
+        
+        See [SECURITY.md](../SECURITY.md) for the full disclosure policy.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "📝 Vulnerability Summary"
+      description: "Brief summary (not the full PoC)"
+      placeholder: "SQL Injection possible in user search endpoint"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: "🚨 Severity"
+      description: "Initial assessment"
+      options:
+        - "🔴 CRITICAL (Immediate RCE, Auth bypass, Data loss)"
+        - "🟠 HIGH (Unauthorized access, Data exposure)"
+        - "🟡 MEDIUM (Partial bypass, Limited impact)"
+        - "🟢 LOW (Minor issue, Low exploitability)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: "📦 Affected Product"
+      options:
+        - "QuantumShift AI"
+        - "AETHER"
+        - "TermAI"
+        - "Infrastructure"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: textarea
+    id: email
+    attributes:
+      label: "📧 Your Contact Email"
+      description: "We'll use this for confidential follow-up"
+      placeholder: "your.email@example.com"
+    validations:
+      required: true
+
+  - type: textarea
+    id: next_steps
+    attributes:
+      label: "➡️ Next Steps"
+      value: |
+        **Please do not provide PoC or technical details here.**
+        
+        1. Your issue will be acknowledged within 24 hours
+        2. For full disclosure, email: security@quantum-shift.fr
+        3. Include detailed PoC and reproduction steps in email
+        4. We'll investigate and prepare a patch
+        5. Coordinated disclosure will follow
+        
+        Thank you for helping keep QuantumShift secure! 🙏
+      attributes:
+        readonly: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "🔍 Acknowledgment"
+      options:
+        - label: "I understand this will be handled confidentially"
+          required: true
+        - label: "I've read the SECURITY.md policy"
+          required: true

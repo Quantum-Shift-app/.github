@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/orgs/Quantum-Shift-app/discussions
+    about: Have a question? Ask the community in Discussions
+
+  - name: 📧 Security Issue
+    url: https://github.com/Quantum-Shift-app/.github/blob/main/SECURITY.md
+    about: Found a security vulnerability? Please email security@quantum-shift.fr
+
+  - name: 🚀 Product Roadmap
+    url: https://github.com/orgs/Quantum-Shift-app/projects
+    about: Check out our roadmap and planned features
+
+  - name: 💼 Enterprise Support
+    url: https://quantum-shift.fr/support
+    about: Contact our enterprise support team

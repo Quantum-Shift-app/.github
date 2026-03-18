@@ -1,0 +1,147 @@
+name: ✨ Feature Request
+description: Suggest an idea or enhancement for QuantumShift
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### We'd love to hear your ideas! 🚀
+        Help us make QuantumShift even better by suggesting improvements.
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: "Which product should this feature improve?"
+      options:
+        - "QuantumShift AI (DMS)"
+        - "AETHER (Code Analysis)"
+        - "TermAI (SSH Terminal)"
+        - "Infrastructure/DevOps"
+        - "All/Cross-product"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "🎯 Problem Statement"
+      description: "What problem does this feature solve? What's the use case?"
+      placeholder: |
+        Currently, mechanics spend 20 minutes manually searching through
+        OBD-II fault codes. A quick search with AI would save time.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "💡 Proposed Solution"
+      description: "How would you like this feature to work?"
+      placeholder: |
+        Add a natural language search box in the dashboard:
+        - User types: "Engine temperature warning"
+        - AI suggests: P0125 (Insufficient Coolant Temperature)
+        - Click to view details, history, and fixes
+      value: |
+        ### Proposed Implementation
+        
+        1. **Frontend**
+           - Add search component
+           - Integrate with new endpoint
+        
+        2. **Backend**
+           - Create `/api/search/fault-codes` endpoint
+           - Use RAG with ChatGPT + ChromaDB
+        
+        3. **Database**
+           - No schema changes needed
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "🔀 Alternative Solutions"
+      description: "Have you considered other approaches?"
+      placeholder: |
+        1. Google integration - but too slow for in-call use
+        2. Rule-based matching - but lacks context understanding
+        3. Dropdown filter - but hard to navigate with 5000+ codes
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: "📊 Impact & Benefits"
+      description: "What's the business/user impact?"
+      placeholder: |
+        - **User Impact**: Reduce lookup time from 20min to 30sec
+        - **Business**: Increase diagnostic accuracy from 92% to 97%
+        - **Competitive**: Similar to competitor's "DiagnosticAI" feature
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: "🎬 Examples / Use Cases"
+      description: "Real-world scenarios where this feature helps"
+      placeholder: |
+        **Scenario 1: Quick Diagnostic**
+        Tom: "We have a P0125 code - what does it mean?"
+        AI: "Insufficient Coolant Temperature - usually thermostat failure"
+        Tom saves 15 minutes of manual research
+        
+        **Scenario 2: Training**
+        New apprentice uses natural language to learn fault codes
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "✅ Definition of Done"
+      description: "How will we know this feature is complete?"
+      placeholder: |
+        - [ ] Search endpoint returns results in < 500ms
+        - [ ] Supports 3+ natural language searches
+        - [ ] 95%+ accuracy matching with OBD-II codes
+        - [ ] Unit tests with 85%+ coverage
+        - [ ] Documentation added
+        - [ ] No performance regression (< 2% impact)
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "⚡ Priority"
+      description: "How urgent is this?"
+      options:
+        - "🔴 Blocking (Critical)"
+        - "🟠 High (Soon)"
+        - "🟡 Medium (Roadmap)"
+        - "🟢 Low (Nice to have)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📎 Additional Context"
+      description: "Screenshots, mockups, links, or other context"
+      placeholder: |
+        - Competitor reference: [CompetitorX Feature Link]
+        - Customer request: [Link to support ticket]
+        - Design mockup: [Figma link]
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "🔍 Pre-submission Checklist"
+      options:
+        - label: "I've searched for similar feature requests"
+          required: true
+        - label: "I've clearly explained the problem and solution"
+          required: true
+        - label: "I've provided real use cases"
+          required: true
+        - label: "I've read the CODE_OF_CONDUCT"
+          required: true

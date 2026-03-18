@@ -1,0 +1,135 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[BUG] "
+labels: ["bug", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Thanks for helping us improve QuantumShift! 🙏
+        Please fill out the form below with as much detail as possible.
+
+  - type: dropdown
+    id: product
+    attributes:
+      label: "Which product is affected?"
+      options:
+        - "QuantumShift AI (DMS)"
+        - "AETHER (Code Analysis)"
+        - "TermAI (SSH Terminal)"
+        - "Infrastructure/DevOps"
+        - "Other (please specify)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "📝 Bug Description"
+      description: "Clear and concise description of what the bug is."
+      placeholder: "App crashes when uploading files larger than 500MB"
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "🔄 Steps to Reproduce"
+      description: "Minimal steps to reproduce the bug"
+      placeholder: |
+        1. Open the dashboard
+        2. Click on 'Upload Document'
+        3. Select a file > 500MB
+        4. Observe the crash
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "✅ Expected Behavior"
+      description: "What should happen instead?"
+      placeholder: "The file should upload successfully with a progress bar"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "❌ Actual Behavior"
+      description: "What actually happens?"
+      placeholder: "The app crashes with a memory error"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error_logs
+    attributes:
+      label: "📋 Error Logs / Stack Trace"
+      description: "If applicable, provide error messages or stack traces"
+      render: python
+      placeholder: |
+        Traceback (most recent call last):
+          File "main.py", line 42, in upload_handler
+            process_file(file)
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: "🖥️ Environment"
+      options:
+        - "macOS (Intel)"
+        - "macOS (Apple Silicon)"
+        - "Windows 10"
+        - "Windows 11"
+        - "Linux (Ubuntu 22.04)"
+        - "Linux (Debian)"
+        - "Docker"
+        - "Cloud (Specify below)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: env_details
+    attributes:
+      label: "🔧 Environment Details"
+      description: "Additional environment information"
+      placeholder: |
+        - Version: QuantumShift AI v4.2
+        - Python: 3.10.11
+        - Browser: Chrome 123.0
+        - Database: PostgreSQL 15
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: "🛠️ Possible Workaround"
+      description: "Have you found any workaround to avoid this issue?"
+      placeholder: "Uploading files in chunks < 100MB works"
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "📎 Additional Context"
+      description: "Screenshots, videos, or any other relevant information"
+      placeholder: "Attach screenshots or videos showing the issue"
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "🔍 Pre-submission Checklist"
+      options:
+        - label: "I've searched for similar issues"
+          required: true
+        - label: "I've included detailed reproduction steps"
+          required: true
+        - label: "I've included relevant environment information"
+          required: true
+        - label: "I've read the CODE_OF_CONDUCT"
+          required: true

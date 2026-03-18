@@ -1,0 +1,124 @@
+version: 2
+updates:
+  # Python dependencies (pip)
+  - package-ecosystem: "pip"
+    directory: "/quantumshift"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: "/"
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "python"
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "indirect"
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
+    rebase-strategy: "auto"
+    target-branch: "main"
+
+  # Node.js/npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/quantumshift/src/frontend"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:30"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "frontend"
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
+    ignore:
+      # Ignore major updates for stability
+      - dependency-name: "react"
+        update-types:
+          - "version-update:semver-major"
+    rebase-strategy: "auto"
+    target-branch: "main"
+
+  # Docker dependencies
+  - package-ecosystem: "docker"
+    directory: "/quantumshift"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "docker"
+    commit-message:
+      prefix: "chore(docker):"
+      include: "scope"
+    target-branch: "main"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "ci-cd"
+    commit-message:
+      prefix: "chore(ci):"
+    target-branch: "main"
+
+# AETHER subproject
+  - package-ecosystem: "pip"
+    directory: "/aether"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "04:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "python"
+    commit-message:
+      prefix: "chore(deps):"
+    target-branch: "main"
+
+# TermAI subproject (Go)
+  - package-ecosystem: "gomod"
+    directory: "/termai"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "04:00"
+      timezone: "Europe/Paris"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "nistanoj"
+    labels:
+      - "dependencies"
+      - "go"
+    commit-message:
+      prefix: "chore(deps):"
+    target-branch: "main"
+
+# Note: Dependabot requires GitHub Advanced Security (included in Enterprise)
+# If using Free/Pro tier, commits will still be tracked but PRs may be limited

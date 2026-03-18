@@ -1,0 +1,64 @@
+# Code Owners for QuantumShift Organization
+
+# Global owners (all repositories)
+* @nistanoj
+
+# QuantumShift AI DMS Repository
+quantumshift/src/backend/ @nistanoj
+quantumshift/src/frontend/ @nistanoj
+quantumshift/src/quantum/ @nistanoj
+quantumshift/tests/ @nistanoj
+quantumshift/docs/security/ @nistanoj
+
+# AETHER Code Analysis Repository
+aether/src/scanner/ @nistanoj
+aether/src/analysis/ @nistanoj
+aether/src/synthesis/ @nistanoj
+aether/tests/ @nistanoj
+aether/docs/ @nistanoj
+
+# TermAI SSH Terminal Repository
+termai/internal/ @nistanoj
+termai/main.go @nistanoj
+termai/Dockerfile* @nistanoj
+
+# Shared GitHub Configuration
+.github/ @nistanoj
+.github/SECURITY.md @nistanoj
+.github/CODE_OF_CONDUCT.md @nistanoj
+
+# Docker & DevOps
+Dockerfile* @nistanoj
+docker-compose.yml @nistanoj
+scripts/ @nistanoj
+deploy/ @nistanoj
+
+# Documentation
+*.md @nistanoj
+docs/ @nistanoj
+
+# Database & Infrastructure
+alembic/ @nistanoj
+*.sql @nistanoj
+DB_ARCHITECTURE.md @nistanoj
+
+# CI/CD & Build Configuration
+.github/workflows/ @nistanoj
+pytest.ini @nistanoj
+ruff.toml @nistanoj
+pyproject.toml @nistanoj
+
+# Requirements & Dependencies
+requirements*.txt @nistanoj
+package.json @nistanoj
+go.mod @nistanoj
+
+# Audit & Compliance
+AUDIT_*.md @nistanoj
+SECURITY.md @nistanoj
+LICENSE @nistanoj
+
+# Notes:
+# - Code owners are automatically requested for PR reviews
+# - They can also dismiss PR reviews if needed
+# - Syntax: /path @username or /path @team
