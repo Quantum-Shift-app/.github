@@ -2,6 +2,8 @@
 
 This directory contains all GitHub configuration and community guidelines for the **QuantumShift** organization.
 
+> **🌌 [← View Organization Profile](profile/README.md)** — See our public organization page with products and ecosystem overview.
+
 ---
 
 ## 📚 Files Overview

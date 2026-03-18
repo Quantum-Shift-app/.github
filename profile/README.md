@@ -81,6 +81,12 @@ Nous construisons des systèmes robustes, évolutifs et performants en utilisant
 
 ---
 
+## 📁 Fichiers Clés du Répertoire `.github`
+
+> **🌌 [← View Development Issues](../README.md)** — Check Development Issues
+
+---
+
 ## 📊 Statistiques de l'Infrastructure
 
 ```shell
